@@ -90,7 +90,7 @@ function updatePlaylist(songs) {
         });
 
         // Load duration of the song
-        const audioForDuration = new Audio(`pic/${song.src}`);
+        const audioForDuration = new Audio(`music-player-system-main/${song.src}`);
         audioForDuration.addEventListener("loadedmetadata", () => {
             const duration = formatTime(audioForDuration.duration);
             tr.querySelector(".length h5").innerText = duration;
@@ -107,10 +107,10 @@ function formatTime(time) {
 
 function loadSong(index) {
     const song = songs[index];
-    audio.src = `pic/${song.src}`;
+    audio.src = `music-player-system-main/${song.src}`;
     currentSongTitle.innerHTML = song.title;
     infoWrapper.innerHTML = `<h2>${song.title}</h2><h3>${song.artist}</h3>`;
-    coverImage.style.backgroundImage = `url(pic/${song.img_src})`;
+    coverImage.style.backgroundImage = `url(music-player-system-main/${song.img_src})`;
 
     if (favourites.includes(index)) {
         currentFavourite.classList.add("active");
